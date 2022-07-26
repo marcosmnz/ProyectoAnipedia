@@ -1,73 +1,114 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- CSS only -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="app">
-      <nav>
-        <div id="menu">
-          <img src="./img/logo.png" height="80" />
-          <ul>
-            <li>TV Shows</li>
-            <li>Movies</li>
-          </ul>
-          <select name="categories" id="categories">
-            <option disabled selected>Categories</option>
-          </select>
-        </div>
-      </nav>
-      <div id="content">
-        <div id="header" style="background-image: url('./img/cover.jpeg')">
-          <div id="header-content">
-            <h1>Title</h1>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit placeat voluptatem consequuntur quisquam tempora corrupti. Debitis hic expedita, labore suscipit perferendis recusandae nostrum, dicta corrupti dolorem ipsum ratione corporis consequatur.</p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <script src="https://kit.fontawesome.com/cda7ff839c.js" crossorigin="anonymous"></script>
+    <script defer src="./JS/main.js"></script>
+    <script defer src="./JS/top.js"></script>
+    <script defer src="./JS/search.js"></script>
+    <link rel="icon" href="./Img/ANIPEDIA LOGO.png">
+    <title>Anipedia</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+              <a class="navbar-item">
+                <img id="imageAnipedia" src="./Img/Diseño sin título.png"  height="60">
+              </a>
+          
+              <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+              </a>
+            </div>
+          
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a id="home-button" class="navbar-item">
+                  Home
+                </a>
+          
+                <a class="navbar-item">
+                  Manga
+                </a>
+          
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a id="top" class="navbar-link">
+                    Top
+                  </a>
+          
+                  <div class="navbar-dropdown">
+                    <a id="top-characters" class="navbar-item">
+                      Characters
+                    </a>
+                    <a id="top-anime" class="navbar-item">
+                      Anime
+                    </a>
+                    <a id="top-manga" class="navbar-item">
+                      Manga
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                      Report an issue
+                    </a>
+                  </div>
+                </div>
+                <a class="navbar-item">
+                    <div class="field">
+                        <div class="control has-icons-right">
+                          <input id="busqueda" class="input" type="text" placeholder="Search..."><span class="icon is-small is-right">
+                            <i class="fas fa-search"></i>
+                          </span>
+                        </div>
+                      </div>
+                  </a>
+              </div>
+          
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <div class="buttons">
+                    <a class="button is-danger">
+                      <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                      Log in
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        <br>
+        <div id="main-container" class="columns is-multiline">
+          <h1 class="title is-3 mt-2">Action</h1>
+          <div id="genre-action" class="columns is-multiline">
+          </div>
+          <h1 class="title is-3 mt-2">Adventure</h1>
+          <div id="genre-adventure" class="columns is-multiline">
           </div>
         </div>
-        <div id="categories-group">
-          <h3>My List</h3>
-          <div class="covers-containers">
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-          </div>
-          <h3>Most Popular</h3>
-          <div class="covers-containers">
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-          </div>
-          <h3>Category 1</h3>
-          <div class="covers-containers">
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
-            <img src="./img/cover.jpeg" alt="" />
+        <div id="modal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p id="modal-name" class="modal-card-title"></p>
+              <button id="close-button" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+              <img src="" alt="">
+             <p id="modal-about"></p>
+            </section>
           </div>
         </div>
-      </div>
     </div>
-    <script src="./js/main.js"></script>
-    <script src="./js/select.js"></script>
-  </body>
+</body>
 </html>
