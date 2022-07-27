@@ -33,6 +33,7 @@ const printAction = (animePrint) => {
           <figure class="image is-square">
             <img src="${results.images.jpg.image_url}" alt="Placeholder image">
           </figure>
+          <p class="modal-title">${results.title}</p>
         </div>
     </div>
 </div>`
@@ -53,14 +54,34 @@ const printAdventure = (animePrint) => {
            <figure class="image is-square">
              <img src="${results.images.jpg.image_url}" alt="Placeholder image">
            </figure>
+           <p class="modal-title">${results.title}</p>
          </div>
      </div>
  </div>`
- document.querySelector('#genre-adventure').append(div)
+ document.querySelector('#genre-adventure').append(div);
   })
-  
- 
  }
+
+
+ const printHorror = (animePrint) => {
+
+  animePrint.forEach((results) => {
+     let div = document.createElement("div");
+     div.classList.add("column", "is-3");
+     div.innerHTML += `<div class="column">
+     <div class="card">
+         <div class="card-image">
+           <figure class="image is-square">
+             <img src="${results.images.jpg.image_url}" alt="Placeholder image">
+           </figure>
+           <p class="modal-title">${results.title}</p>
+         </div>
+     </div>
+ </div>`
+ document.querySelector('#genre-horror').append(div)
+  })
+ }
+
 
         
 fetch('https://api.jikan.moe/v4/anime?genres=1')
@@ -77,6 +98,16 @@ fetch('https://api.jikan.moe/v4/anime?genres=2')
   console.log(animeAdventure.data)
   printAdventure(animeAdventure.data);    
 });
+
+fetch('https://api.jikan.moe/v4/anime?genres=14')
+.then(response => response.json())
+.then(data =>{
+  animeHorror = data;
+  console.log(animeHorror.data)
+  printHorror(animeHorror.data);
+});
+
+
 
 
 document.querySelector('#home-button').addEventListener('click', home);

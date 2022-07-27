@@ -19,7 +19,7 @@ const print = (animePrint) => {
              <figure class="image is-square">
                <img src="${results.images.jpg.image_url}" alt="Placeholder image">
              </figure>
-             <p>${results.name}</p>
+             <p class="modal-title">${results.name}</p>
            </div>
        </div>
    </div>`
@@ -28,15 +28,16 @@ const print = (animePrint) => {
 
     div.dataset.name = results.name;
     div.dataset.about = results.about;
+    div.dataset.image = results.images.jpg.image_url;
+  
 
 
    div.addEventListener("click",function(evt){
-//     //alert(evt.currentTarget.dataset.affiliation);
     console.log(evt.currentTarget.dataset.about)
     document.querySelector(".modal").classList.add("is-active");
-    document.querySelector("#modal-name").innerHTML = evt.currentTarget.dataset.name;
-    document.querySelector("#modal-about").innerHTML = evt.currentTarget.dataset.about;
-//     document.querySelector("#ficha-affiliation").innerHTML=evt.currentTarget.dataset.affiliation;
+    document.querySelector("#modal-name").innerText = evt.currentTarget.dataset.name;
+    document.querySelector("#modal-about").innerText = evt.currentTarget.dataset.about;
+    document.querySelector("#modal-image").src = evt.currentTarget.dataset.image;
 
 
  });
@@ -54,10 +55,12 @@ const print = (animePrint) => {
        div.innerHTML += `<div class="column">
        <div class="card">
            <div class="card-image">
+           <a class="link-anime" href="${results.url}" target="_blank">
              <figure class="image is-square">
                <img src="${results.images.jpg.image_url}" alt="Placeholder image">
              </figure>
-             <p>${results.title}</p>
+             <p class="modal-title">${results.title}</p>
+          </a>
            </div>
        </div>
    </div>`

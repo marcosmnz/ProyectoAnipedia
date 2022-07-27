@@ -5,3 +5,22 @@
 .navbar-item img {
     max-height: 2.75rem;
 }
+.navbar {
+    background-color: rgba(10, 10, 10, 0);
+}
+
+.modal-title {
+    display: flex;
+    justify-content: center;
+    font-size: small;
+}
+body {
+    background-image: url(../Img/ANIPEDIA-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    
+ }
+ .link-anime {
+    text-decoration: none
+ }

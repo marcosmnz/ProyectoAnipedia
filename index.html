@@ -13,15 +13,16 @@
     <script defer src="./JS/main.js"></script>
     <script defer src="./JS/top.js"></script>
     <script defer src="./JS/search.js"></script>
+    <script defer src="./JS/manga.js"></script>
     <link rel="icon" href="./Img/ANIPEDIA LOGO.png">
     <title>Anipedia</title>
 </head>
 <body>
-    <div class="container mt-5">
+    <div id="container" class="container mt-5">
         <nav class="navbar" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
               <a class="navbar-item">
-                <img id="imageAnipedia" src="./Img/Diseño sin título.png"  height="60">
+                <img id="imageAnipedia" src="./Img/Diseño_sin_título-removebg-preview.png"  height="60">
               </a>
           
               <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -37,7 +38,7 @@
                   Home
                 </a>
           
-                <a class="navbar-item">
+                <a id="manga-button" class="navbar-item">
                   Manga
                 </a>
           
@@ -95,6 +96,9 @@
           <h1 class="title is-3 mt-2">Adventure</h1>
           <div id="genre-adventure" class="columns is-multiline">
           </div>
+          <h1 class="title is-3 mt-2">Horror</h1>
+          <div id="genre-horror" class="columns is-multiline">
+          </div>
         </div>
         <div id="modal" class="modal">
           <div class="modal-background"></div>
@@ -104,7 +108,7 @@
               <button id="close-button" class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
-              <img src="" alt="">
+              <img id="modal-image" src="" alt="">
              <p id="modal-about"></p>
             </section>
           </div>
