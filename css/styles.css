@@ -12,7 +12,7 @@
 .modal-title {
     display: flex;
     justify-content: center;
-    font-size: small;
+    font-size: medium;
 }
 body {
     background-image: url(../Img/ANIPEDIA-removebg-preview.png);
@@ -24,3 +24,51 @@ body {
  .link-anime {
     text-decoration: none
  }
+
+.column figure {
+    position: relative;
+    cursor: pointer;
+}
+.column figure img{
+    transition: all 500ms ease-out;
+}
+
+.column figure .capa{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.602);
+    transition: all 500ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.column figure:hover > .capa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.column figure:hover > .capa h3 {
+    margin-top: 70px;
+}
+
+.column figure .capa h3 {
+    color: #fff;
+    font-weight: 400;
+    margin-bottom: 120px;
+    transition: all 500ms ease-out;
+    margin-top: 30px;
+}
+
+#pagination-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#modal-link {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

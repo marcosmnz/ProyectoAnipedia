@@ -8,6 +8,7 @@ const buscar = (evt) =>{
             busqueda = data;
             console.log(busqueda.data);
             print2(busqueda.data);
+            document.querySelector('#pagination-buttons').innerHTML = '';
         })
    
    

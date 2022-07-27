@@ -12,17 +12,6 @@ const home = () => {
   window.location.href = "index.html"
 };
 
-//   fetch('https://api.jikan.moe/v4/anime?genre=2')
-//   .then(response => response.json())
-//   .then(data =>{
-//     animeAdventure = data;
-//     console.log(animeAdventure.data);
-//     print(animeAdventure.data);    
-//   });
-
-
-
-
 const printAction = (animePrint) => {
  animePrint.forEach((results) => {
     let div = document.createElement("div");
@@ -30,10 +19,15 @@ const printAction = (animePrint) => {
     div.innerHTML += `<div class="column">
     <div class="card">
         <div class="card-image">
-          <figure class="image is-square">
-            <img src="${results.images.jpg.image_url}" alt="Placeholder image">
+        <a class="link-anime" href="${results.url}" target="_blank">
+        <figure class="image is-square">
+          <img src="${results.images.jpg.image_url}" alt="Placeholder image">
+         <div class="capa">
+         <h3 class="modal-title">${results.title}</h3>
+         </div>
+        </figure>
+     </a>
           </figure>
-          <p class="modal-title">${results.title}</p>
         </div>
     </div>
 </div>`
@@ -51,10 +45,14 @@ const printAdventure = (animePrint) => {
      div.innerHTML += `<div class="column">
      <div class="card">
          <div class="card-image">
-           <figure class="image is-square">
-             <img src="${results.images.jpg.image_url}" alt="Placeholder image">
-           </figure>
-           <p class="modal-title">${results.title}</p>
+         <a class="link-anime" href="${results.url}" target="_blank">
+         <figure class="image is-square">
+           <img src="${results.images.jpg.image_url}" alt="Placeholder image">
+          <div class="capa">
+          <h3 class="modal-title">${results.title}</h3>
+          </div>
+         </figure>
+      </a>
          </div>
      </div>
  </div>`
@@ -71,10 +69,14 @@ const printAdventure = (animePrint) => {
      div.innerHTML += `<div class="column">
      <div class="card">
          <div class="card-image">
+         <a class="link-anime" href="${results.url}" target="_blank">
            <figure class="image is-square">
              <img src="${results.images.jpg.image_url}" alt="Placeholder image">
+            <div class="capa">
+            <h3 class="modal-title">${results.title}</h3>
+            </div>
            </figure>
-           <p class="modal-title">${results.title}</p>
+        </a>
          </div>
      </div>
  </div>`
@@ -95,7 +97,6 @@ fetch('https://api.jikan.moe/v4/anime?genres=2')
 .then(response => response.json())
 .then(data =>{
   animeAdventure = data;
-  console.log(animeAdventure.data)
   printAdventure(animeAdventure.data);    
 });
 
@@ -103,7 +104,6 @@ fetch('https://api.jikan.moe/v4/anime?genres=14')
 .then(response => response.json())
 .then(data =>{
   animeHorror = data;
-  console.log(animeHorror.data)
   printHorror(animeHorror.data);
 });
 
