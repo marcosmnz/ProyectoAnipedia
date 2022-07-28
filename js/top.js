@@ -16,7 +16,7 @@ const print = (animePrint) => {
        div.innerHTML += `<div class="column">
        <div class="card">
            <div class="card-image">
-             <figure class="image is-square">
+             <figure class="image is-2by3">
                <img src="${results.images.jpg.image_url}" alt="Placeholder image">
                <div class="capa">
             <h3 class="modal-title">${results.name}</h3>
@@ -36,7 +36,7 @@ const print = (animePrint) => {
 
 
    div.addEventListener("click",function(evt){
-    document.querySelector(".modal").classList.add("is-active");
+    document.querySelector("#modal-characters").classList.add("is-active");
     document.querySelector("#modal-name").innerText = evt.currentTarget.dataset.name;
     document.querySelector("#modal-about").innerText = evt.currentTarget.dataset.about;
     document.querySelector("#modal-image").src = evt.currentTarget.dataset.image;
@@ -60,7 +60,7 @@ const print = (animePrint) => {
        <div class="card">
            <div class="card-image">
            <a class="link-anime" href="${results.url}" target="_blank">
-             <figure class="image is-square">
+             <figure class="image is-2by3">
                <img src="${results.images.jpg.image_url}" alt="Placeholder image">
                <div class="capa">
             <h3 class="modal-title">${results.title}</h3>

@@ -10,10 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./CSS/styles.css">
     <script src="https://kit.fontawesome.com/cda7ff839c.js" crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script defer src="./JS/main.js"></script>
+    <script defer src="./JS/login.js"></script>
     <script defer src="./JS/top.js"></script>
     <script defer src="./JS/search.js"></script>
     <script defer src="./JS/manga.js"></script>
+    <script defer src="./JS/favs.js"></script>
     <link rel="icon" href="./Img/ANIPEDIA LOGO.png">
     <title>Anipedia</title>
 </head>
@@ -77,10 +81,10 @@
               <div class="navbar-end">
                 <div class="navbar-item">
                   <div class="buttons">
-                    <a class="button is-danger">
+                    <a id="openModalSignUp" class="button is-danger">
                       <strong>Sign up</strong>
                     </a>
-                    <a class="button is-light">
+                    <a id="openModalLogin" class="button is-light">
                       Log in
                     </a>
                   </div>
@@ -90,17 +94,87 @@
           </nav>
         <br>
         <div id="main-container" class="columns is-multiline">
-          <h1 class="title is-3 mt-2">Action</h1>
+          <h1 class="separation-titles title is-3 mt-2">Action</h1>
           <div id="genre-action" class="columns is-multiline">
           </div>
-          <h1 class="title is-3 mt-2">Adventure</h1>
+          <h1 class="separation-titles title is-3 mt-2">Adventure</h1>
           <div id="genre-adventure" class="columns is-multiline">
           </div>
-          <h1 class="title is-3 mt-2">Horror</h1>
+          <h1 class="separation-titles title is-3 mt-2">Horror</h1>
           <div id="genre-horror" class="columns is-multiline">
           </div>
         </div>
-        <div id="modal" class="modal">
+
+
+        <div id="modal-login" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Login</p>
+              <button id="close-button-login" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+              <div class="control">
+                <label for="username">Username</label>
+                <input class="input" type="text" placeholder="Username">
+              </div>
+              <br>
+              <div class="control">
+                <label for="username">Password</label>
+                <input class="input" type="password" placeholder="Password...">
+              </div>
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-success">Login</button>
+            </footer>
+          </div>
+        </div>
+
+
+        <div id="modal-signup" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-card">
+            <header class="modal-card-head">
+              <p class="modal-card-title">Register</p>
+              <button id="close-button-signup" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+
+              <div class="control">
+                <label for="username">First Name</label>
+                <input class="input" type="text" placeholder="Write your first name...">
+              </div>
+
+              <br>
+
+              <div class="control">
+                <label for="username">Last Name</label>
+                <input class="input" type="text" placeholder="Write your last name...">
+              </div>
+
+              <br>
+
+              <div class="control">
+                <label for="username">Write an username</label>
+                <input class="input" type="text" placeholder="Choose your new username...">
+              </div>
+
+              <br>
+
+              <div class="control">
+                <label for="username">Write a password</label>
+                <input class="input" type="password" placeholder="Choose your new password...">
+              </div>
+
+              
+            </section>
+            <footer class="modal-card-foot">
+              <button class="button is-success">Register</button>
+            </footer>
+          </div>
+        </div>
+
+        <div id="modal-characters" class="modal">
           <div class="modal-background"></div>
           <div class="modal-card">
             <header class="modal-card-head">
@@ -118,7 +192,6 @@
           </div>
         </div>
         <div class="m-6" id="pagination-buttons">
-         
         </div>
     </div>
 </body>
